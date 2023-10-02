@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Lekz6OrThKwq3pJ0k8UAiZ7bOUzJGDcK6Jswkjvd0rN2mcj8K4cOaeLxMBEy21XduDVjUkVi5niAcaSIC76Zww==",
+  "dgSpecHash": "z6FX8NHdZIZ56UkQjxr39akBogRoAu/+tnMfr2E33VuBRrYaykcvwiT4NNKIjwC3dNG38vdWk2cYYVh+cbqc8Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\User\\Desktop\\GT\\GT\\API\\API\\API.csproj",
+  "projectFilePath": "C:\\Users\\User\\Desktop\\GT\\project12a-GT\\API\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.2\\microsoft.visualstudio.azure.containers.tools.targets.1.19.2.nupkg.sha512"
   ],
