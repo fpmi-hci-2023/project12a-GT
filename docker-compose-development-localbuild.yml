@@ -2,7 +2,7 @@ version: "3.9"
 
 services:   
   webapi:
-    image: "retur/gt/api"
+    image: "retur/api"
     ports:
       - "5000:80"
     build:
@@ -13,7 +13,7 @@ services:
     restart: on-failure
 
   front:
-    image: "retur/gt/web"
+    image: "retur/web"
     ports:
       - "4200:80"
     build:

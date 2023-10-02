@@ -18,12 +18,12 @@ cd ..
 
 docker-compose -f .\docker-compose-development-localbuild.yml build # --no-cache
 
-docker tag retur/gt/web:latest retur/gt/web:$Env:TAG
-docker tag retur/gt/api:latest retur/gt/api:$Env:TAG
+docker tag retur/web:latest retur/web:$Env:TAG
+docker tag retur/api:latest retur/api:$Env:TAG
 
 git commit -a -m "VERSION: $Env:TAG"
 git tag -a $Env:TAG -m "VERSION: $Env:TAG"
 # push (same env)
-docker push retur/gt/web:$Env:TAG
-docker push retur/gt/api:$Env:TAG
+docker push retur/web:$Env:TAG
+docker push retur/api:$Env:TAG
 
