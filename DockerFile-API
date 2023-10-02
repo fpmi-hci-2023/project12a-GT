@@ -1,0 +1,16 @@
+FROM mcr.microsoft.com/dotnet/sdk:7.0-alpine AS build
+WORKDIR /source
+
+COPY API/API/. ./API/
+COPY API/Data/. ./Data/
+COPY API/Services/. ./Services/
+
+WORKDIR /source/API/
+
+RUN dotnet publish -c release -o /app
+
+FROM mcr.microsoft.com/dotnet/aspnet:7.0
+EXPOSE 80
+WORKDIR /app
+COPY --from=build /app ./
+ENTRYPOINT ["dotnet", "API.dll"]

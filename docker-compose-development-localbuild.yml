@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:   
+  webapi:
+    image: "retur/api"
+    ports:
+      - "5000:80"
+    build:
+      context: ./
+      dockerfile: DockerFile-API
+    environment:
+      - ConnectionStrings:DefaultConnection=Server=host.docker.internal;User Id=root;Password=root;Database=webcalc
+    restart: on-failure
+
+  front:
+    image: "retur/web"
+    ports:
+      - "4200:80"
+    build:
+      context: ./
+      dockerfile: DockerFile-Web
+    restart: on-failure
+    
+
+

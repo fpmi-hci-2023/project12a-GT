@@ -1,0 +1,13 @@
+**/node_modules
+**/.angular/cache
+**/.vscode
+**/.vs
+**/.gitignore
+**/bin
+**/obj
+.vscode
+.vs
+.gitignore
+.dockerignore
+
+
