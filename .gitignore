@@ -12,7 +12,8 @@
 *.user
 *.userosscache
 *.sln.docstates
-
+*.cache
+*.editorconfig
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
@@ -332,3 +333,5 @@ src/WebCalc.App/package-lock.json
 *.csv
 /src/.vscode
 
+/API/API/obj/Debug/net7.0/API.assets.cache
+/API/API/obj/Debug/net7.0/API.GeneratedMSBuildEditorConfig.editorconfig
