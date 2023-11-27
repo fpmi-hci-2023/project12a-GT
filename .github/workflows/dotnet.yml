@@ -20,11 +20,12 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
-    - name: Change folder
-      run: cd API
     - name: Restore dependencies
+      working-directory: ./API
       run: dotnet restore
     - name: Build
+      working-directory: ./API
       run: dotnet build --no-restore
     - name: Test
+      working-directory: ./API
       run: dotnet test --no-build --verbosity normal
