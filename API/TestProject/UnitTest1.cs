@@ -7,5 +7,11 @@ namespace TestProject
         {
             Assert.Equal(1, 0);
         }
+
+        [Fact]
+        public void Test2()
+        {
+            Assert.Equal(1, 1);
+        }
     }
 }
