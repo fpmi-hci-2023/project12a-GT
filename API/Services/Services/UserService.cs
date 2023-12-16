@@ -3,12 +3,14 @@
 using Data;
 using Data.Entities;
 using Microsoft.EntityFrameworkCore;
+using Services.DTOs;
 
 namespace Services.Services
 {
     public interface IUserService
     {
-        Task<User> GetUserAsync(string password, string username);
+        Task<UserDTO> GetUserAsync(string password, string username);
+        Task<UserDTO> UpdateUserAsync(UserDTO userDTO);
     }
 
     public class UserService : IUserService
@@ -19,9 +21,15 @@ namespace Services.Services
             this.dataContext = dataContext;
         }
 
-        public async Task<User> GetUserAsync(string password, string username)
+        public async Task<UserDTO> GetUserAsync(string password, string username)
         {
-            return await dataContext.users.FirstOrDefaultAsync(_ => _.Username == username && _.Password == password);
+            return await dataContext.users.
+                FirstOrDefaultAsync(_ => _.Username == username && _.Password == password);
+        }
+
+        public Task<UserDTO> UpdateUserAsync(UserDTO userDTO)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -1,5 +1,6 @@
 using Data.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Services.DTOs;
 using Services.Services;
 
 namespace API.Controllers
@@ -18,9 +19,15 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public async Task<User> Get(string password, string username)
+        public async Task<UserDTO> Get(string password, string username)
         {
             return await userService.GetUserAsync(password, username);
+        }
+
+        [HttpPost("update")]
+        public async Task<UserDTO> Register([FromBody] UserDTO userDTO)
+        {
+            return await userService.UpdateUserAsync(userDTO);
         }
     }
 }
