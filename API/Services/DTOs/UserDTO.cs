@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Services.DTOs
 {
-    public class UserReposneDTO
+    public class UserDTO
     {
         public int Id { get; set; }
         public string Username { get; set; }

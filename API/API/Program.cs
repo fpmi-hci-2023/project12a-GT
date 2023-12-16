@@ -10,6 +10,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Services.Services;
+using AutoMapper;
+using WebCalc.Business.Helpers;
 
 namespace API
 {
@@ -35,6 +37,13 @@ namespace API
                         o.EnableRetryOnFailure();
                     });
             });
+
+            var mappingConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new BusinessAutoMapperProfile());
+            });
+            var mapper = mappingConfig.CreateMapper();
+            builder.Services.AddSingleton(mapper);
 
             builder.Services.AddScoped<IEventService, EventService>();
             builder.Services.AddScoped<IUserService, UserService>();

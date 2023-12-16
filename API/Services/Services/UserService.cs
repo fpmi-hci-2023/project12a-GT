@@ -1,7 +1,9 @@
 ﻿
 
+using AutoMapper;
 using Data;
 using Data.Entities;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Services.DTOs;
 
@@ -16,14 +18,18 @@ namespace Services.Services
     public class UserService : IUserService
     {
         private readonly DataContext dataContext;
-        public UserService(DataContext dataContext)
+        private readonly IMapper mapper;
+        public UserService(DataContext dataContext, IMapper mapper)
         {
             this.dataContext = dataContext;
+            this.mapper = mapper;
         }
 
         public async Task<UserDTO> GetUserAsync(string password, string username)
         {
-            throw new NotImplementedException();
+            var user = await dataContext.users.FirstOrDefaultAsync(u => u.Username == username && u.Password == password);
+
+            return mapper.Map<UserDTO>(user);
         }
 
         public Task<UserDTO> UpdateUserAsync(UserDTO userDTO)
