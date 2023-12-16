@@ -1,5 +1,6 @@
 using Data.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Services.DTOs;
 using Services.Services;
 
 namespace API.Controllers
@@ -18,7 +19,7 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public async Task<User> Get(string password, string username)
+        public async Task<EventDTO> Get(string password, string username)
         {
             return await eventService.GetEventsAsync(password, username);
         }

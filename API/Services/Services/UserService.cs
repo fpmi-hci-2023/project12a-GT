@@ -23,8 +23,7 @@ namespace Services.Services
 
         public async Task<UserDTO> GetUserAsync(string password, string username)
         {
-            return await dataContext.users.
-                FirstOrDefaultAsync(_ => _.Username == username && _.Password == password);
+            throw new NotImplementedException();
         }
 
         public Task<UserDTO> UpdateUserAsync(UserDTO userDTO)
