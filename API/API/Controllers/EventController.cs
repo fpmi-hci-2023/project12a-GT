@@ -8,12 +8,12 @@ namespace API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class Eventontroller : ControllerBase
+    public class EventController : ControllerBase
     {
         private readonly ILogger<UserController> _logger;
         private readonly IEventService eventService;
 
-        public Eventontroller(ILogger<UserController> logger, IEventService eventService)
+        public EventController(ILogger<UserController> logger, IEventService eventService)
         {
             _logger = logger;
             this.eventService = eventService;
