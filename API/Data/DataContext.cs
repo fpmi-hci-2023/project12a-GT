@@ -22,5 +22,8 @@ public class DataContext : DbContext
         modelBuilder.Entity<User>()
             .HasMany(u => u.eventsCreated)
             .WithOne(e => e.Author);
+        modelBuilder.Entity<User>()
+            .HasIndex(u => u.Username)
+            .IsUnique();
     }
 }

@@ -423,6 +423,19 @@
         "runtime": {
           "bin/placeholder/Data.dll": {}
         }
+      },
+      "Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Services.dll": {}
+        }
       }
     }
   },
@@ -1119,6 +1132,11 @@
       "type": "project",
       "path": "../Data/Data.csproj",
       "msbuildProject": "../Data/Data.csproj"
+    },
+    "Services/1.0.0": {
+      "type": "project",
+      "path": "../Services/Services.csproj",
+      "msbuildProject": "../Services/Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1128,7 +1146,8 @@
       "Microsoft.EntityFrameworkCore.Design >= 7.0.14",
       "Microsoft.EntityFrameworkCore.Relational >= 7.0.14",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.19.2",
-      "Pomelo.EntityFrameworkCore.MySql >= 7.0.0"
+      "Pomelo.EntityFrameworkCore.MySql >= 7.0.0",
+      "Services >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1166,6 +1185,9 @@
           "projectReferences": {
             "C:\\Users\\User\\Desktop\\GT\\project12a-GT\\API\\Data\\Data.csproj": {
               "projectPath": "C:\\Users\\User\\Desktop\\GT\\project12a-GT\\API\\Data\\Data.csproj"
+            },
+            "C:\\Users\\User\\Desktop\\GT\\project12a-GT\\API\\Services\\Services.csproj": {
+              "projectPath": "C:\\Users\\User\\Desktop\\GT\\project12a-GT\\API\\Services\\Services.csproj"
             }
           }
         }
