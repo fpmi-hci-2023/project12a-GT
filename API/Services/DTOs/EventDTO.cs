@@ -15,8 +15,8 @@ namespace Services.DTOs
         public string Description { get; set; }
         public DateTime date { get; set; }
         public string Address { get; set; }
-        public List<User> Users { get; set; }
+        public List<UserDTO> Users { get; set; }
         public int MaxUsers { get; set; }
-        public User Author { get; set; }
+        public UserDTO Author { get; set; }
     }
 }

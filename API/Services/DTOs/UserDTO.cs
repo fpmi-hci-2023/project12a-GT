@@ -14,8 +14,8 @@ namespace Services.DTOs
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Avatar { get; set; }
-        public List<Event> eventsCreated { get; set; }
-        public List<Event> eventsSubscribed { get; set; }
+        public List<EventDTO> eventsCreated { get; set; }
+        public List<EventDTO> eventsSubscribed { get; set; }
         public string Description { get; set; }
     }
 }
