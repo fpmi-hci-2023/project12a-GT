@@ -12,6 +12,7 @@ namespace Services.Services
     public interface IUserService
     {
         Task<UserDTO> GetUserAsync(string password, string username);
+        Task<UserDTO> RegisterUserAsync(UserDTO userDTO);
         Task<UserDTO> UpdateUserAsync(UserDTO userDTO);
     }
 
@@ -30,6 +31,11 @@ namespace Services.Services
             var user = await dataContext.users.FirstOrDefaultAsync(u => u.Username == username && u.Password == password);
 
             return mapper.Map<UserDTO>(user);
+        }
+
+        public Task<UserDTO> RegisterUserAsync(UserDTO userDTO)
+        {
+            throw new NotImplementedException();
         }
 
         public Task<UserDTO> UpdateUserAsync(UserDTO userDTO)

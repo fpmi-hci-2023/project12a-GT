@@ -10,7 +10,8 @@ namespace Services.Services
 {
     public interface IEventService
     {
-        Task<EventDTO> GetEventsAsync(string password, string username);
+        Task<EventDTO> CreateEventAsync(EventDTO eventDTO);
+        Task<EventDTO> GetEventsAsync(int page);
     }
 
     public class EventService : IEventService
@@ -20,7 +21,17 @@ namespace Services.Services
 
         }
 
+        public Task<EventDTO> CreateEventAsync(EventDTO eventDTO)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<EventDTO> GetEventsAsync(string password, string username)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<EventDTO> GetEventsAsync(int page)
         {
             throw new NotImplementedException();
         }

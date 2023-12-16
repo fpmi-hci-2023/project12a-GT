@@ -14,8 +14,8 @@ namespace Data.Entities
         public string Surname { get; set; }
         public string Avatar { get; set; }
         public string Password { get; set; }
-        public List<Event> eventsCreated { get; set; }
-        public List<Event> eventsSubscribed { get; set; }
+        public List<Event> EventsCreated { get; set; }
+        public List<Event> EventsSubscribed { get; set; }
         public string Description { get; set; }
     }
 }

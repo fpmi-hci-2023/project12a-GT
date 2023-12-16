@@ -16,11 +16,11 @@ public class DataContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<User>()
-            .HasMany(u => u.eventsSubscribed)
+            .HasMany(u => u.EventsSubscribed)
             .WithMany(e => e.Users);
 
         modelBuilder.Entity<User>()
-            .HasMany(u => u.eventsCreated)
+            .HasMany(u => u.EventsCreated)
             .WithOne(e => e.Author);
         modelBuilder.Entity<User>()
             .HasIndex(u => u.Username)

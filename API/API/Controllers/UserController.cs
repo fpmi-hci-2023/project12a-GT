@@ -24,10 +24,10 @@ namespace API.Controllers
             return await userService.GetUserAsync(password, username);
         }
 
-        [HttpPost("update")]
+        [HttpPost("resgister")]
         public async Task<UserDTO> Register([FromBody] UserDTO userDTO)
         {
-            return await userService.UpdateUserAsync(userDTO);
+            return await userService.RegisterUserAsync(userDTO);
         }
     }
 }

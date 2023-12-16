@@ -1,5 +1,6 @@
 using Data.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Services.DTOs;
 using Services.Services;
 
@@ -19,9 +20,15 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public async Task<EventDTO> Get(string password, string username)
+        public async Task<EventDTO> Get(int page)
         {
-            return await eventService.GetEventsAsync(password, username);
+            return await eventService.GetEventsAsync(page);
+        }
+
+        [HttpPost]
+        public async Task<EventDTO> Create([FromBody] EventDTO eventDTO)
+        {
+            return await eventService.CreateEventAsync(eventDTO);
         }
     }
 }
