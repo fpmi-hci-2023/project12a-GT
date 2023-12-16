@@ -1,0 +1,26 @@
+﻿using Data.Entities;
+using Microsoft.EntityFrameworkCore;
+
+namespace Data;
+
+public class DataContext : DbContext
+{
+    public DataContext(DbContextOptions<DataContext> options) : base(options)       
+    {        
+        this.ChangeTracker.LazyLoadingEnabled = false;
+    }
+
+    public DbSet<User> users { get; set; }
+    public DbSet<Event> events { get; set; }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<User>()
+            .HasMany(u => u.eventsSubscribed)
+            .WithMany(e => e.Users);
+
+        modelBuilder.Entity<User>()
+            .HasMany(u => u.eventsCreated)
+            .WithOne(e => e.Author);
+    }
+}
