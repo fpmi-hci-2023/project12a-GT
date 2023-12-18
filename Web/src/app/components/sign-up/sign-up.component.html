@@ -1,0 +1,32 @@
+<div class="d-flex flex-column align-items-center">
+  <h3>Registration</h3>
+
+  <form (ngSubmit)="signUp()">
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input type="text" id="username" [(ngModel)]="user.username" name="username" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+      <label for="firstName">First name:</label>
+      <input type="text" id="firstName" [(ngModel)]="user.firstName" name="firstName" class="form-control" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="lastName">Last name:</label>
+      <input type="text" id="lastName" [(ngModel)]="user.lastName" name="lastName" class="form-control" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="avatar">Avatar:</label>
+      <input type="file" id="avatar" (change)="onAvatarChange($event)" name="avatar" class="form-control" accept="image/*">
+    </div>
+    
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" [(ngModel)]="user.password" name="password" class="form-control" required>
+    </div>
+    
+    <button type="submit" class="btn btn-primary  m-2">Confirm registration</button>
+  </form>
+</div>

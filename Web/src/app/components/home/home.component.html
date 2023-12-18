@@ -1,0 +1,50 @@
+     
+<div class="container">
+     <div class="row ">
+        <div class="col-md-2">
+          <div class="d-flex flex-column align-items-start menu ml-auto">
+            
+              <button type="button" class="btn btn-dark btn-block"  (click)="goEvents()">
+                  <img src="../../../assets/events.png" alt="Логотип" class = "logo"> 
+                  Events
+              </button>
+              <button type="button" class="btn btn-dark btn-block">
+                  <img src="../../../assets/profile.png" alt="Логотип" class = "logo">  
+                  Profile
+              </button>
+              <button type="button" class="btn btn-dark btn-block">
+                  <img src="../../../assets/chat.png" alt="Логотип" class = "logo">  
+                  Chats
+              </button>
+              <button type="button" class="btn btn-dark btn-block" style="margin-bottom: 15px;">
+                  <img src="../../../assets/about.png" alt="Логотип" class = "logo"> 
+                  About
+              </button>
+
+              <span style="display: block;  top: 50%; left: 0; right: 0; margin-bottom: 15px; height: 1px; background-color: white;"></span>
+              
+              <button type="button" class="btn btn-dark btn-block">
+                  <img src="../../../assets/support.png" alt="Логотип" class = "logo">
+                  Support
+              </button>
+
+              <button type="button" class="btn btn-dark btn-block" (click)="gologout()">
+                  <img src="../../../assets/logout.png" alt="Логотип" class = "logo">  
+                  Logout
+              </button>
+
+            </div> 
+        </div>
+
+        <div class="col-md-10">
+          <div  class="row d-flex router-container">
+            <router-outlet></router-outlet>
+            
+          </div>
+        </div>  
+
+      </div>
+      </div>
+
+    <!-- <p>home component to add menu</p>
+  <app-meetings></app-meetings> -->

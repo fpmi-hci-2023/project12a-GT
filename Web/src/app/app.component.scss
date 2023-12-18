@@ -1,0 +1,24 @@
+a {padding: 5px;}
+.avatar-container {
+    width: 50px; /* Желаемая ширина */
+    height: 50px; /* Желаемая высота */
+    border-radius: 50%; /* Создает форму круга */
+    overflow: hidden; /* Обрезает содержимое, чтобы соответствовать размерам контейнера */
+  }
+  
+  .avatar-image {
+    width: 100%; /* Заполняет ширину контейнера */
+    height: 100%; /* Заполняет высоту контейнера */
+    object-fit: cover; /* Масштабирует и обрезает изображение, чтобы оно полностью заполнило контейнер */
+  }
+  .logo{
+    max-height: 25px;
+    max-width: 25px;
+    // vertical-align: middle;
+    // margin-right: 5px;
+    // position: sticky;
+  }
+  .menu {
+    background: #313131; /* Задайте цвет фона, используя соответствующее значение */
+    // position: sticky;
+  }
