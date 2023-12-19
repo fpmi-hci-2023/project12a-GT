@@ -28,21 +28,65 @@ export class SignUpComponent {
 
     // console.log( 'User sign up data:', this.user);
 
-  
-    this.authService.registerUser(this.user).subscribe({
-      next: response => {
-        
-        const updatedUser = response;
-        this.userDataService.setCurrentUser(updatedUser);
-        this.userDataService.isLoggedIn = true;
-        console.log('Пользователь успешно зарегистрирован', response);
-        this.router.navigate(["home/meetings"]);
-      },
-      error: error => {
-        console.error('Ошибка при регистрации пользователя', error);
-      }
+    
+    const reader = new FileReader();
+    if (this.user.avatar != null) {
+      reader.readAsDataURL(this.user.avatar);
+      reader.onload = (e: any) => {
+        // this.avatarUrl = e.target.result;
+
+        const reqUser = {
+          "username": this.user.username,
+          "name": this.user.firstName,
+          "surname": this.user.lastName,
+          "avatar": reader.result,
+          "description": "",
+          "password": this.user.password
+        };
+    
+        this.authService.registerUser(reqUser).subscribe({
+          next: response => {
+            
+            const updatedUser = response;
+            this.userDataService.setCurrentUser(updatedUser);
+            this.userDataService.isLoggedIn = true;
+            console.log('Пользователь успешно зарегистрирован', response);
+            this.router.navigate(["home/meetings"]);
+          },
+          error: error => {
+            console.error('Ошибка при регистрации пользователя', error);
+          }
+        }
+        );
+      };
     }
-    );
+    else{
+      const reqUser = {
+        "username": this.user.username,
+        "name": this.user.firstName,
+        "surname": this.user.lastName,
+        "avatar": "",
+        "description": "",
+        "password": this.user.password
+      };
+  
+      this.authService.registerUser(reqUser).subscribe({
+        next: response => {
+          
+          const updatedUser = response;
+          this.userDataService.setCurrentUser(updatedUser);
+          this.userDataService.isLoggedIn = true;
+          console.log('Пользователь успешно зарегистрирован', response);
+          this.router.navigate(["home/meetings"]);
+        },
+        error: error => {
+          console.error('Ошибка при регистрации пользователя', error);
+        }
+      }
+      );
+    }
+
+   
   }
 
 }

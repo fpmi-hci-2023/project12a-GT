@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { User } from '@models/user.model';
+import { User, UserDTO } from '@models/user.model';
 import { Subject } from 'rxjs';
 
 @Injectable({
@@ -26,17 +26,17 @@ export class UserDataService {
 
 
 
-  private currentUser: User | null;
+  private currentUser: UserDTO | null;
 
   constructor() {
     this.currentUser = null;
   }
 
-  setCurrentUser(user: User): void {
+  setCurrentUser(user: UserDTO): void {
     this.currentUser = user;
   }
 
-  getCurrentUser(): User | null {
+  getCurrentUser(): UserDTO | null {
     return this.currentUser;
   }
 }

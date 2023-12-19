@@ -15,3 +15,13 @@ export class User{
                public password: string
                ){}
 }
+
+export class UserDTO{
+  constructor( public id: number,
+               public username: string,
+               public name: string,
+               public surname: string,
+               public avatar: string,
+               public description: string
+               ){}
+}

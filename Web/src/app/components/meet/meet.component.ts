@@ -10,7 +10,7 @@ import { MeetingsDataService } from '@services/meetings-data.service';
   styleUrl: './meet.component.scss'
 })
 export class MeetComponent {
-  id: string | undefined;
+  id: number | undefined;
   private subscription: Subscription;
 
   // currentMeet: Meet = new Meet('','','','');
@@ -25,7 +25,11 @@ export class MeetComponent {
   ngOnInit(): void {
     // this.curMeetings = this.meetingsData.getMeetings();
     
-    var tempMeet = this.meetingsData.getMeetings().find(item => item.id === this.id);
+    // console.log("Meetings: ", this.meetingsData.getMeetings());
+    console.log("Id: ", this.id);
+
+    var tempMeet = this.meetingsData.getMeetings().find(item => item.id == this.id);
+    
     if(tempMeet !== undefined){
       this.currentMeet = tempMeet;
     }

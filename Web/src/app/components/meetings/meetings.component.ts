@@ -3,7 +3,7 @@ import { MeetingsDataService } from '@services/meetings-data.service';
 import { UserDataService } from '@services/user-data.service';
 import { Router } from "@angular/router";
 import { Meet } from "@models/meet.model";
-
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 
 @Component({
@@ -20,7 +20,9 @@ export class MeetingsComponent {
               public userData: UserDataService) { }
 
   ngOnInit() {
-      this.itemList = this.meetingsService.getItems();
+      this.meetingsService.getItems(0).subscribe(result => {
+        this.itemList = result
+      });
       console.log("Загрузили новый список митингов с сервера", this.itemList)
   }
 

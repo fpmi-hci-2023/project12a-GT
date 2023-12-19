@@ -1688,24 +1688,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Evgeniy Belotelov\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\GT\\project12a-GT\\API\\API\\API.csproj",
+      "projectUniqueName": "D:\\University\\Course 4\\GT\\project12a-GT\\API\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\User\\Desktop\\GT\\project12a-GT\\API\\API\\API.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\GT\\project12a-GT\\API\\API\\obj\\",
+      "projectPath": "D:\\University\\Course 4\\GT\\project12a-GT\\API\\API\\API.csproj",
+      "packagesPath": "C:\\Users\\Evgeniy Belotelov\\.nuget\\packages\\",
+      "outputPath": "D:\\University\\Course 4\\GT\\project12a-GT\\API\\API\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Evgeniy Belotelov\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1713,18 +1708,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\User\\Desktop\\GT\\project12a-GT\\API\\Data\\Data.csproj": {
-              "projectPath": "C:\\Users\\User\\Desktop\\GT\\project12a-GT\\API\\Data\\Data.csproj"
+            "D:\\University\\Course 4\\GT\\project12a-GT\\API\\Data\\Data.csproj": {
+              "projectPath": "D:\\University\\Course 4\\GT\\project12a-GT\\API\\Data\\Data.csproj"
             },
-            "C:\\Users\\User\\Desktop\\GT\\project12a-GT\\API\\Services\\Services.csproj": {
-              "projectPath": "C:\\Users\\User\\Desktop\\GT\\project12a-GT\\API\\Services\\Services.csproj"
+            "D:\\University\\Course 4\\GT\\project12a-GT\\API\\Services\\Services.csproj": {
+              "projectPath": "D:\\University\\Course 4\\GT\\project12a-GT\\API\\Services\\Services.csproj"
             }
           }
         }
@@ -1789,7 +1783,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.404\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

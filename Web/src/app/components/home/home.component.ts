@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserDataService } from '@services/user-data.service';
-import { User } from '@models/user.model';
+import { User, UserDTO } from '@models/user.model';
 import { Router} from "@angular/router";
 
 @Component({
@@ -11,7 +11,7 @@ import { Router} from "@angular/router";
 
 
 export class HomeComponent {
-  currentUser: User | null;
+  currentUser: UserDTO | null;
 
   constructor(private router: Router, private userData: UserDataService) { 
       this.currentUser = null;

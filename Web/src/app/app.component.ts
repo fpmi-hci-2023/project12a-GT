@@ -30,29 +30,37 @@ import { UserDataService } from '@services/user-data.service';
       this.router.navigate(["login"]); // переход на корень приложения
     }
 
-    readAvatarFile() {
-      var avatar = this.userData.getCurrentUser()?.avatar
-      if (avatar != null) {
-        const reader = new FileReader();
-        reader.onload = (e: any) => {
-          this.avatarUrl = e.target.result;
-        };
-        reader.readAsDataURL(avatar);
-      }
-    }
+    // readAvatarFile() {
+    //   var avatar = this.userData.getCurrentUser()?.avatar
+    //   if (avatar != null) {
+    //     const reader = new FileReader();
+    //     reader.onload = (e: any) => {
+    //       this.avatarUrl = e.target.result;
+    //     };
+    //     reader.readAsDataURL(avatar);
+    //   }
+    // }
 
     
     ngOnInit() {
       this.userData.getisLoggedInChanged().subscribe((value: boolean) => {
-        if (value) {
-          this.readAvatarFile();
+        // if (value) {
+        //   this.readAvatarFile();
           
-          var val_username = this.userData.getCurrentUser()?.username
-          if (val_username) {
-            this.username = val_username
-          }
-          // console.log("AVATAR TRYED")
+        //   var val_username = this.userData.getCurrentUser()?.username
+        //   if (val_username) {
+        //     this.username = val_username
+        //   }
+        //   // console.log("AVATAR TRYED")
+        // }
+
+        this.avatarUrl = this.userData.getCurrentUser()?.avatar + '';
+        // this.avatarUrl = 'data:image/jpeg;base64,' + this.userData.getCurrentUser()?.avatar;
+        const tempUsername = this.userData.getCurrentUser()?.username;
+        if(tempUsername !== undefined){
+            this.username = tempUsername
         }
+        
       });
     }
   }

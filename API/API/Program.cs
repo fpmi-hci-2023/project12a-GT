@@ -20,7 +20,18 @@ namespace API
     {
         public static void Main(string[] args)
         {
+
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("myAppCors", policy =>
+                {
+                    policy.AllowAnyOrigin()
+                            .AllowAnyHeader()
+                            .AllowAnyMethod();
+                });
+            });
 
             // Add services to the container.
             builder.Services.AddSwaggerGen();
@@ -52,8 +63,10 @@ namespace API
             builder.Services.AddScoped<IEventService, EventService>();
             builder.Services.AddScoped<IUserService, UserService>();
 
+
             var app = builder.Build();
 
+            app.UseCors("myAppCors");
 
             app.UseSwagger();
             app.UseSwaggerUI();
