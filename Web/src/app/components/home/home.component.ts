@@ -32,4 +32,8 @@ export class HomeComponent {
   goEvents(){
     this.router.navigate(["home/meetings"]); // переход на корень приложения
   }
+
+  goAddEvent(){
+    this.router.navigate(["home/addEvent"]); // переход на корень приложения
+  }
 }

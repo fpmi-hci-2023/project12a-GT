@@ -20,17 +20,6 @@ export class AuthService {
     })}
 
     return this.http.post(url, user, header);
-    
-    // const registeredUser: User = new User(
-    //   '123',
-    //   user.username,
-    //   user.firstName,
-    //   user.lastName,
-    //   user.avatar,
-    //   user.password
-    // );
-
-    // return of(registeredUser);
   }
 
   loginUser(user: any): Observable<any> {

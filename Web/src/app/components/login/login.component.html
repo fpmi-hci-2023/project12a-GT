@@ -11,8 +11,8 @@
       <label for="password">Password:</label>
       <input type="password" id="password" [(ngModel)]="user.password" name="password" class="form-control" required>
     </div>
-    
+    <div style="color: red;">{{ warning }}</div>
     <button type="submit" class="btn btn-primary  m-2">Log in to app</button>
   </form>
-
+  
 </div> 
