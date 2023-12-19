@@ -20,13 +20,19 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public async Task<EventDTO> Get(int page)
+        public async Task<List<EventDTO>> Get(int page)
         {
             return await eventService.GetEventsAsync(page);
         }
 
+        [HttpGet("subs")]
+        public async Task<EventDTO> SubscribeUnsubscribeEventAsync([FromQuery]int userId, int eventId)
+        {
+            return await eventService.SubscribeUnsubscribeEventAsync(userId, eventId);
+        }
+
         [HttpPost]
-        public async Task<EventDTO> Create([FromBody] EventDTO eventDTO)
+        public async Task<EventDTO> Create([FromBody] EventCreateDTO eventDTO)
         {
             return await eventService.CreateEventAsync(eventDTO);
         }

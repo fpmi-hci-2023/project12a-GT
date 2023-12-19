@@ -24,8 +24,14 @@ namespace API.Controllers
             return await userService.GetUserAsync(password, username);
         }
 
+        [HttpGet("{id}")]
+        public async Task<UserDTO> GetId(int id)
+        {
+            return await userService.GetUserbyIdAsync(id);
+        }
+
         [HttpPost("resgister")]
-        public async Task<UserDTO> Register([FromBody] UserDTO userDTO)
+        public async Task<UserDTO> Register([FromBody] UserCreateDTO userDTO)
         {
             return await userService.RegisterUserAsync(userDTO);
         }

@@ -7,16 +7,13 @@ using System.Threading.Tasks;
 
 namespace Services.DTOs
 {
-    public class EventDTO
+    public class UserForEventDTO
     {
         public int Id { get; set; }
-        public string Image { get; set; }
+        public string Username { get; set; }
         public string Name { get; set; }
+        public string Surname { get; set; }
+        public string Avatar { get; set; }
         public string Description { get; set; }
-        public DateTime date { get; set; }
-        public string Address { get; set; }
-        public List<UserForEventDTO> Users { get; set; }
-        public int MaxUsers { get; set; }
-        public UserForEventDTO Author { get; set; }
     }
 }

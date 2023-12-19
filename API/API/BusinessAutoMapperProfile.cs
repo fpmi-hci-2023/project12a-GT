@@ -14,6 +14,9 @@ public class BusinessAutoMapperProfile : Profile
     {
        
         CreateMap<User, UserDTO>();
+        CreateMap<User, UserForEventDTO>();
+        CreateMap<UserCreateDTO, User>();
         CreateMap<Event, EventDTO>();
+        CreateMap<EventCreateDTO, Event>();
     }
 }

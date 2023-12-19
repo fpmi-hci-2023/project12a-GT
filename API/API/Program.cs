@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using Services.Services;
 using AutoMapper;
 using WebCalc.Business.Helpers;
+using System.Text.Json.Serialization;
 
 namespace API
 {
@@ -23,11 +24,14 @@ namespace API
 
             // Add services to the container.
             builder.Services.AddSwaggerGen();
-            builder.Services.AddControllers();
+            builder.Services.AddControllers().AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+            }); ;
 
             builder.Services.AddDbContext<DataContext>(options =>
             {
-                options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTrackingWithIdentityResolution);
+                options.UseQueryTrackingBehavior(QueryTrackingBehavior.TrackAll);
                 options.UseMySql(
                     builder.Configuration.GetConnectionString("DefaultConnection"),
                     ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection")),
@@ -47,7 +51,9 @@ namespace API
 
             builder.Services.AddScoped<IEventService, EventService>();
             builder.Services.AddScoped<IUserService, UserService>();
+
             var app = builder.Build();
+
 
             app.UseSwagger();
             app.UseSwaggerUI();

@@ -12,8 +12,8 @@ namespace Services.Services
     public interface IUserService
     {
         Task<UserDTO> GetUserAsync(string password, string username);
-        Task<UserDTO> RegisterUserAsync(UserDTO userDTO);
-        Task<UserDTO> UpdateUserAsync(UserDTO userDTO);
+        Task<UserDTO> GetUserbyIdAsync(int id);
+        Task<UserDTO> RegisterUserAsync(UserCreateDTO userDTO);
     }
 
     public class UserService : IUserService
@@ -28,19 +28,27 @@ namespace Services.Services
 
         public async Task<UserDTO> GetUserAsync(string password, string username)
         {
-            var user = await dataContext.users.FirstOrDefaultAsync(u => u.Username == username && u.Password == password);
+            var user = await dataContext.users
+                .Include(u => u.EventsCreated)
+                .Include(u => u.EventsSubscribed)
+                .FirstOrDefaultAsync(u => u.Username == username && u.Password == password);
 
             return mapper.Map<UserDTO>(user);
         }
 
-        public Task<UserDTO> RegisterUserAsync(UserDTO userDTO)
+        public async Task<UserDTO> GetUserbyIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return mapper.Map<UserDTO>(await dataContext.users.FirstOrDefaultAsync(u => u.Id == id));
         }
 
-        public Task<UserDTO> UpdateUserAsync(UserDTO userDTO)
+        public async Task<UserDTO> RegisterUserAsync(UserCreateDTO userDTO)
         {
-            throw new NotImplementedException();
+            User user = mapper.Map<User>(userDTO);
+
+            await dataContext.users.AddAsync(user);
+            await dataContext.SaveChangesAsync();
+
+            return mapper.Map<UserDTO>(user);
         }
     }
 }
