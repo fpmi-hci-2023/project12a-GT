@@ -1,7 +1,7 @@
 <div class="d-flex flex-column align-items-center">
   <h3>Login</h3>
 
-  <form (ngSubmit)="login()">
+  <form (ngSubmit)="login()" ngNativeValidate>
     <div class="form-group">
       <label for="username">Username:</label>
       <input type="text" id="username" [(ngModel)]="user.username" name="username" class="form-control" required>

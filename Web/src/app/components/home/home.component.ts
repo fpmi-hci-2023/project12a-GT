@@ -36,4 +36,7 @@ export class HomeComponent {
   goAddEvent(){
     this.router.navigate(["home/addEvent"]); // переход на корень приложения
   }
+  openVideo() {
+    window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
+  }
 }
