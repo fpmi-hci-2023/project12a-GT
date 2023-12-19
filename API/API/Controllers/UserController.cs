@@ -30,7 +30,7 @@ namespace API.Controllers
             return await userService.GetUserbyIdAsync(id);
         }
 
-        [HttpPost("resgister")]
+        [HttpPost("register")]
         public async Task<UserDTO> Register([FromBody] UserCreateDTO userDTO)
         {
             return await userService.RegisterUserAsync(userDTO);
