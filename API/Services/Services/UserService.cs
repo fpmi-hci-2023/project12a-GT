@@ -38,7 +38,10 @@ namespace Services.Services
 
         public async Task<UserDTO> GetUserbyIdAsync(int id)
         {
-            return mapper.Map<UserDTO>(await dataContext.users.FirstOrDefaultAsync(u => u.Id == id));
+            return mapper.Map<UserDTO>(await dataContext.users
+                .Include(u => u.EventsCreated)
+                .Include(u => u.EventsSubscribed)
+                .FirstOrDefaultAsync(u => u.Id == id));
         }
 
         public async Task<UserDTO> RegisterUserAsync(UserCreateDTO userDTO)
