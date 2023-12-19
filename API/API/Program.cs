@@ -72,8 +72,6 @@ namespace API
             app.UseSwaggerUI();
             // Configure the HTTP request pipeline.
 
-            app.UseHttpsRedirection();
-
             app.UseAuthorization();
 
 
