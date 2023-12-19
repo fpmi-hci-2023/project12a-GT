@@ -1,0 +1,55 @@
+// .menu {
+//     position: sticky;
+//     top: 0;
+//     height: 100vh;
+//     overflow-y: auto;
+//     margin-top: 20px; 
+//     gap: 10px;
+//     // z-index: 1;
+//     left: 0;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: stretch;
+//   }
+
+  .menu {
+    position: sticky;
+    top: 0;    
+    left: 0;
+    // height: 100vh;
+    // overflow-y: auto;
+    margin-top: 20px; 
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .menu button {
+    width: 150px; 
+  }
+  .menu span {
+    width: 150px; 
+  }
+
+  .btn-dark {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+  }
+  .logo{
+    max-height: 20px;
+    max-width: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+  
+  .btn{
+    margin-bottom: 5px;
+    height: 50px;
+  }
+
+  // .btn-dark i {
+  //   margin-right: 5px; /* Отступ между иконкой и текстом */
+  // }

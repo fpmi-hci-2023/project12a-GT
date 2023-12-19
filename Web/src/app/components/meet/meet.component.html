@@ -1,0 +1,19 @@
+  <div class="d-flex flex-column align-items-left">
+    <div *ngIf="currentMeet" class="text-center">
+
+      <h2 style="font-size: 1.5em; width: 100%; margin-top: 10px; text-align: left; word-wrap: break-word;">{{ currentMeet.title }}</h2>
+      
+      <div class="image-block align-items-center">
+        <img [src]="currentMeet.preview" alt="Preview" style="max-width: 500px; max-height: 500px; width: 100%;">
+      </div>
+
+      <div class="description-block bg-dark text-white">
+        <p style="width: 100%; margin-top: 30px; text-align: justify;">
+          {{ currentMeet.description }}
+        </p>
+      </div>
+
+    </div>
+
+    <span style="width: 100%; display: block; top: 50%; left: 0; right: 0; margin-bottom: 15px; height: 1px; background-color: white;"></span>
+  </div>
