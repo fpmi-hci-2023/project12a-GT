@@ -332,7 +332,7 @@ ASALocalRun/
 src/WebCalc.App/package-lock.json
 *.csv
 /src/.vscode
-
+**/API/API/obj
 /API/API/obj/Debug/net7.0/API.assets.cache
 /API/API/obj/Debug/net7.0/API.GeneratedMSBuildEditorConfig.editorconfig
 API/API/obj/project.nuget.cache
