@@ -22,8 +22,10 @@ export class MeetingsComponent {
   ngOnInit() {
       this.meetingsService.getItems(0).subscribe(result => {
         this.itemList = result
+        console.log("Загрузили новый список митингов с сервера", this.itemList)
       });
-      console.log("Загрузили новый список митингов с сервера", this.itemList)
+      
+      // console.log("Загрузили новый список митингов с сервера", this.itemList)
   }
 
   handleButtonClick(item: any) {

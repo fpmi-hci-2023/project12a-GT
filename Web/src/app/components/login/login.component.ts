@@ -16,6 +16,7 @@ export class LoginComponent {
 
   user: User = new User('', '', '', '', null, '');
 
+  warning : string = ''
 
   constructor(private authService: AuthService,
               private userDataService: UserDataService,
@@ -30,6 +31,12 @@ export class LoginComponent {
     this.authService.loginUser(this.user).subscribe({
       next: response => {
         const updatedUser = response;        
+        if(updatedUser == null){
+          console.log('Нет такого пользователя', updatedUser);
+          this.warning = 'Wrong password or username'
+          return
+        }
+
         this.userDataService.setCurrentUser(updatedUser);
         this.userDataService.isLoggedIn = true;
         console.log('Пользователь успешно вошел в систему', response);

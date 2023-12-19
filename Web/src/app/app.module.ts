@@ -15,6 +15,7 @@ import { HomeComponent } from './components/home/home.component';
 import { UserDataService } from '@services/user-data.service';
 import { MeetingsComponent } from './components/meetings/meetings.component';
 import { MeetComponent } from './components/meet/meet.component';
+import { AddEventComponent } from './components/add-event/add-event.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { MeetComponent } from './components/meet/meet.component';
     LoginComponent,
     HomeComponent,
     MeetingsComponent,
-    MeetComponent
+    MeetComponent,
+    AddEventComponent
   ],
   imports: [
     MatIconModule,

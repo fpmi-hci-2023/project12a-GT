@@ -27,3 +27,13 @@
   .meetings::-webkit-scrollbar-track:hover {
     background-color: #ccc; /* Цвет фона полосы прокрутки при наведении */
   }
+
+  button.btn-primary:hover {
+    background-color: #393636;
+    color: rgb(164, 164, 164);
+    border: 1px solid rgb(164, 164, 164);
+  }
+  button.btn-primary {
+    background-color: #211e1e;
+    border: 1px solid white;
+  }

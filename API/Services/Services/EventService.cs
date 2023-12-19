@@ -45,12 +45,12 @@ namespace Services.Services
 
         public async Task<List<EventDTO>> GetEventsAsync(int page)
         {
-            const int pageSize = 15;
+            const int pageSize = 20;
             return mapper.Map<List<EventDTO>>(
                 await dataContext.events
                     .Include(e => e.Users)
                     .Include(e => e.Author)
-                    .OrderBy(_ => _.date).Skip(pageSize * page).Take(pageSize)
+                    .OrderBy(_ => _.Id).Skip(pageSize * page).Take(pageSize)
                     .ToListAsync());
         }
 

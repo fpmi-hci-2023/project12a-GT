@@ -5,10 +5,12 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { MeetingsComponent } from './components/meetings/meetings.component';
 import { MeetComponent } from './components/meet/meet.component';
+import { AddEventComponent } from './components/add-event/add-event.component';
 
 const homeRoutes: Routes = [
   { path: "meetings", component: MeetingsComponent},
   { path: "meet/:id", component: MeetComponent},
+  { path: "addEvent", component: AddEventComponent},
 ];
 
 const routes: Routes = [{ path: '', redirectTo: 'login', pathMatch: 'full' },
