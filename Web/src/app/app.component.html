@@ -1,11 +1,13 @@
-<div class="menu container-fluid" style="width: 100%; margin: 0; padding:10;">
+<div class="menu container-fluid" style="width: 100%; margin: 0; padding:10; overflow: hidden;">
 
   <div class="d-flex justify-content-between align-items-center" >
     
     <div class="d-flex align-items-center">
       <img src="../../../assets/mainLogo1.png" alt="Логотип" class = "logo" style="margin-right: 5px;">
       <h1 style="margin-top: 20px;">
-      GatherTogether
+        <a [routerLink]="['home/meetings']" style="text-decoration: none; color: inherit;">
+          GatherTogether
+        </a>
       </h1>
     </div>
     <div>
@@ -29,10 +31,8 @@
   </div>
 </div>
 
-<!-- <div class="container d-flex flex-column align-items-center">
-  <router-outlet></router-outlet>
-</div> -->
 
-<div class="container-fluid p-0">
+<div class="container-fluid p-0" >
     <router-outlet></router-outlet>
-  </div>
+</div>
+

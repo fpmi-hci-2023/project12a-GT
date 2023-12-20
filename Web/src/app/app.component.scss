@@ -22,3 +22,14 @@ a {padding: 5px;}
     background: #313131; /* Задайте цвет фона, используя соответствующее значение */
     // position: sticky;
   }
+
+  button.btn-primary:hover {
+    background-color: #393636;
+    color: rgb(164, 164, 164);
+    border: 1px solid rgb(164, 164, 164);
+  }
+  button.btn-primary {
+    background-color: #211e1e;
+    border: 1px solid white;
+  }
+

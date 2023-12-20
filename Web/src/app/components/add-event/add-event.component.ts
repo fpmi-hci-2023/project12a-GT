@@ -32,18 +32,41 @@ export class AddEventComponent {
 
   addEvent(): void {
 
-    // console.log( 'User sign up data:', this.user);
+    // const date = new Date(this.meet.date);
+    // const [hours, minutes] = this.time.split(':');
+
+    // date.setHours(Number(hours));
+    // date.setMinutes(Number(minutes));
+
+    // const formattedDate = date.toISOString();
+    // console.log("Chat GPT:", formattedDate, "2023-12-19T19:10:44.809Z");
+
+    const [year, month, day] = this.meet.date.split('-');
+    const [hours, minutes] = this.time.split(':');
+
+    const date = new Date();
+    date.setUTCFullYear(Number(year));
+    date.setUTCMonth(Number(month) - 1); // Месяцы в JavaScript начинаются с 0
+    date.setUTCDate(Number(day));
+    date.setUTCHours(Number(hours));
+    date.setUTCMinutes(Number(minutes));
+    date.setUTCSeconds(0);
+    date.setUTCMilliseconds(0);
+
+    const formattedDate = date.toISOString();
+    console.log(formattedDate);
+
+
     const reader = new FileReader();
     if (this.preview != null) {
       reader.readAsDataURL(this.preview);
       reader.onload = (e: any) => {
-        // this.avatarUrl = e.target.result;
 
         const reqMeet = {
           "image": reader.result,
           "name": this.meet.name,
           "description": this.meet.description,
-          "date": "2023-12-19T19:10:44.809Z",
+          "date": formattedDate,
           "address":  this.meet.address,
           "maxUsers": 7,
           "authorId": this.userDataService.getCurrentUser()?.id
@@ -70,7 +93,7 @@ export class AddEventComponent {
         "image": "",
         "name": this.meet.name,
         "description": this.meet.description,
-        "date": "2023-12-19T19:10:44.809Z",
+        "date": formattedDate,
         "address":  this.meet.address,
         "maxUsers": 7,
         "authorId": this.userDataService.getCurrentUser()?.id

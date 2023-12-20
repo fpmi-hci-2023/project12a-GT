@@ -1,14 +1,18 @@
-  <div class="d-flex flex-column align-items-left">
-    <div *ngIf="currentMeet" class="text-center">
+  <div class="d-flex flex-column align-items-left min-height: 80vh;">
+    <div *ngIf="currentMeet">
+    <!-- <div *ngIf="currentMeet" class="text-center"> -->
 
-      <h2 style="font-size: 1.5em; width: 100%; margin-top: 10px; text-align: left; word-wrap: break-word;">{{ currentMeet.name }}</h2>
+      <h2 style="font-size: 1.5em; width: 100%; margin-top: 10px; text-align: left; word-wrap: break-word; font-size: 24px;">{{ currentMeet.name }}</h2>
       
+      <span class="date" style="margin-bottom: 10px; font-size: 14px; text-align: left;" > {{ currentMeet.date | date:'dd.MM.yyyy' }} {{ currentMeet.date | date:'HH:mm' }}</span>
+
+
       <div class="image-block align-items-center">
-        <img [src]="currentMeet.image" alt="Preview" style="max-width: 500px; max-height: 500px; width: 100%;">
+        <img [src]="currentMeet.image" alt="Preview" style="object-fit: cover; height: 500px; width: 80%;">
       </div>
 
       <div class="description-block bg-dark text-white">
-        <p style="width: 100%; margin-top: 30px; text-align: justify;">
+        <p style="width: 100%; margin-top: 30px; text-align: justify; font-size: 18px;">
           {{ currentMeet.description }}
         </p>
       </div>

@@ -1,17 +1,3 @@
-<!-- <div class="container meetings">
-    <div class="row">
-      <div class="col-md-3" *ngFor="let item of itemList">
-        <div class="card bg-dark text-white" style="margin-bottom: 20px;">
-          <img [src]="item.preview" class="card-img-top" alt="Изображение" >
-          <div class="card-body">
-            <h5 class="card-title" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 100%;">{{ item.title }}</h5>
-            <p class="card-text" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; max-height: 3.6em; line-height: 1.8em;">{{ item.description }}</p>
-            <button class="btn btn-primary" (click)="handleButtonClick(item)">Кнопка</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
   <div class="container meetings" style="margin-top: 20px;">
     <div class="row">
       <div class="col-md-3" *ngFor="let item of itemList" style="margin-bottom: 20px;">
@@ -19,10 +5,12 @@
           <!-- <img [src]="item.image" class="card-img-top" alt="Изображение" > -->
           <img [src]="item.image" class="card-img-top" alt="Изображение" style="object-fit: cover; height: 200px; width: 100%;">
           <div class="card-body d-flex flex-column justify-content-between">
-            <h5 class="card-title" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 100%;">{{ item.name }}</h5>
+            <h5 class="card-title" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 100%; font-size: 20px;">{{ item.name }}</h5>
             <p class="card-text" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; line-height: 1.8em;">{{ item.description }}</p>
-            <div class="mt-auto">
-              <button class="btn btn-primary" (click)="handleButtonClick(item)" >Details</button>
+            <div  style="margin-top: 0px;">
+              <button class="btn btn-primary"  style="margin-top: 0px;" (click)="handleButtonClick(item)" >More</button>
+              <span class="date" style="margin-left: 10px; font-size: 12px;" (click)="handleButtonClick(item)"> {{ item.date | date:'dd.MM.yyyy' }} {{ item.date | date:'HH:mm' }}</span>
+                
             </div>
           </div>
         </div>
